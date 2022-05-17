@@ -157,10 +157,10 @@ body {
 	@font-face {
      font-family: 'Hey Pretty Girl';
     
-    src: url("fonts/AnyConv.com__Hey Pretty Girl") format('embedded-opentype'),
-        url("fonts/Hey-Pretty-Girl.otb") format('otb'),
-        url("fonts/Hey-Pretty-Girl.woff") format('woff'),
-        url("fonts/Hey-Pretty-Girl.svg") format('svg');
+    src: url("../fonts/AnyConv.com__Hey Pretty Girl") format('embedded-opentype'),
+        url("../fonts/Hey-Pretty-Girl.otb") format('otb'),
+        url("../fonts/Hey-Pretty-Girl.woff") format('woff'),
+        url("../fonts/Hey-Pretty-Girl.svg") format('svg');
 		
     }
 	
@@ -226,11 +226,9 @@ margin:0 auto;
   min-width: 300px;
 }
 
-.go a{
-	color:#fff;
-}
+
 a{
-  text-decoration:none;
+  text-decoration:none !important;;
   transition:all 500ms ease;
   -moz-transition:all 500ms ease;
   -webkit-transition:all 500ms ease;
@@ -238,7 +236,7 @@ a{
   -o-transition:all 500ms ease;
 }
 
-a:hover{
+a:hover, a:focus{
   text-decoration:none !important;
   outline:none;
   color: #FFFFFF;
@@ -338,7 +336,7 @@ height:62px;
 	
 width:150px;
 
-margin-top:1px;	
+margin-top:0px;	
 	
 }
 
@@ -363,7 +361,7 @@ margin-top:1px;
   line-height: 22px;
   color: #ffffff !important;
   font-weight: 500;
-  margin-top:20px;
+  margin-top:2px;
   text-transform: uppercase;
   cursor: pointer;
   text-align: center;
@@ -696,14 +694,14 @@ font-size:12px;
 margin-right:10px;
 }
 
-.main-header .outer-content li:first-child{
+/*.main-header .outer-content li:first-child{
 	width: auto;
 	background:#2e7ec2;
 	border-radius:5px;
 	color:#FFFFFF;
 	padding:5px;
 	
-}
+}*/
 /*.main-header .outer-content li:first-child:after{
 	 position: absolute;
   content: 'Register';
@@ -733,20 +731,23 @@ margin-right:10px;
 
 .main-header .outer-content li a{
   position: relative;
-  display:none;
+  display:inline-block;
   width: auto;
   font-size: 20px;
   color: #fff;
-  background: #fbb419;
+  background: #2e7ec2;
   text-align: center;
   border-radius: 5px;
   padding:5px;
   line-height:22px;
 }
 
-.main-header .outer-content li a:hover,
-.main-header .outer-content li.header-flyout-searchbar i:hover{
-  background: #ff7162;
+
+ .main-header .outer-content li a:hover{
+  background: #fbb419;
+    border-radius: 5px;
+  padding:5px;
+  line-height:22px;
 }
 
 .main-header .outer-box{
@@ -1519,6 +1520,33 @@ width: 100%;
 
 
 /** about-section **/
+.tb_title{
+font-family: KG Primary Whimsy;
+    color: #89d5ef;
+    font-size: 40px;	
+	
+}
+.CL_title{
+font-family: Hey Pretty Girl;
+    color: #f3a51e;
+    font-size: 32px;	
+	
+}
+.tb_contitle{
+font-family: KG Primary Whimsy;
+    color: #89d5ef;
+    font-size: 24px;	
+	
+}
+
+.CL_contitle{
+font-family: Hey Pretty Girl;
+    color: #f3a51e;
+    font-size: 18px;	
+	
+}
+
+
 
 .about-section{
   position: relative;
@@ -2497,8 +2525,8 @@ h3 a:hover{
   display: block;
   background:#2e7ec2;
   border-radius: 20px;
-  padding: 42px 30px 41px 60px;
-  margin-bottom: 20px;
+  padding: 42px 30px 10px 60px;
+  margin-bottom: 10px;
 }
 
 .testimonial-block .inner-box:before{
@@ -2510,7 +2538,7 @@ h3 a:hover{
   border-radius: 5px;
   left: 50%;
   margin-left: -15px;
-  bottom: -8px;
+  bottom: -7px;
   transform: rotate(-45deg);
 }
 
@@ -2631,6 +2659,9 @@ button.accordion:hover, button.accordion.is-open {
 .faq_box:nth-child(5) button.accordion.is-open h4 {
   color: #ff7162;
 }
+.faq_box:nth-child(6) button.accordion.is-open h4 {
+  color: #a4def4;
+}
 .accordion-content {
   background-color: white;
   padding: 0 20px;
@@ -2654,12 +2685,14 @@ border: 2px solid #2e7ec2;
 .faq_box:nth-child(5){
 	border-color: #ff7162;
 }
-
+.faq_box:nth-child(6){
+	border-color: #a4def4;
+}
 
 button.accordion h4 {
 display:inline-block;
  font-size:14px;
-  font-weight: 600;
+  font-weight: 500;
   color:#2b3c6b;
   line-height:18px;	
   cursor:pointer;
@@ -3370,7 +3403,7 @@ line-height:18px !important;
 .main-footer .footer-bottom .right-content .footer-logo{
   position: relative;
   display: inline-block;
-  margin-right: 300px;
+  margin-right: 295px;
 }
 
 .main-footer .footer-bottom .right-content .footer-logo:before {
@@ -3379,7 +3412,7 @@ line-height:18px !important;
   background: url(../images/icons/logo-shap-2.png);
   width: 216px;
   height: 57px;
-  left: -37px;
+  left: -32px;
   top: -55px;
   background-repeat: no-repeat;
 }
@@ -3678,16 +3711,16 @@ font-size:30px;
 	font-family: 'ITC Lubalin Graph Std - demi';
 }
 
-.go{
+.go a {
 display: flex;
     width: 80px;
     height: 80px;
     border-radius: 50%;
     background: #fbb419;
-    color: #fffffff;
+    color: #ffffff;
     align-items: center;
     justify-content: center;
-    color:#ffffff ;
+   
     margin: 5px 0 0 2rem;
 	font-family: 'KG Primary Whimsy';
 	font-size:4rem;
@@ -3695,7 +3728,21 @@ display: flex;
 	
 	
 }
-	
+
+/*.go a{
+	color:#fff;
+}*/
+
+.go a:hover, .go a:focus{
+	display: flex;
+	border-radius: 50%;
+    background: #a6c339;
+	 width: 80px;
+    height: 80px;
+	 align-items: center;
+    justify-content: center;
+	margin: 5px 0 0 2rem;
+}
 	
 	.logo-ani{
 		position:relative;
@@ -5105,7 +5152,7 @@ padding:10px;
 .contact-section .outer-container .contact-column .form-group .theme-btn{
   background: #a6c339;
   color: #ffffff !important;
-   border:solid 1px #6fc27c;
+  
   
 }
 
@@ -5121,6 +5168,10 @@ padding:10px;
  color: #f37164;
   size: 80%
 
+}
+.hiddenmail
+{
+  display:none;
 }
 
 /*** 
@@ -5358,7 +5409,30 @@ opacity:1;
   margin-bottom: 40px;
 }
 
-
+.thankyou_message{
+	display:none;
+	border-radius:10px;
+	background:#fbb419;
+	color:#ffffff;
+	width:auto;
+	height:auto;
+	padding:5px;
+	
+	margin:5px auto;
+	text-align:center;
+	
+}
+.register_message{
+	display:none;
+	color:#ffffff;
+	width:100%;
+	height:auto;
+	margin:5px auto;
+	text-align:center;
+	border-radius:10px;
+	background:#fbb419;
+	padding:5px;
+}
 
 /*** 
 
@@ -8518,7 +8592,7 @@ text-align:center;
 .contact-form-section .sec-title{
   position: relative;
   display: block;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .contact-form-section .contact-form .form-group{
@@ -8551,12 +8625,20 @@ text-align:center;
 .contact-form-section .contact-form .form-group textarea{
   height: 170px;
   resize: none;
-  margin-bottom: 30px;
+  margin-bottom: 3px;
 }
 
 .contact-form-section .contact-form .form-group input:focus,
 .contact-form-section .contact-form .form-group textarea:focus{
   border-color: #ff7162;
+}
+
+.email-error{
+	display:block;
+	width:auto;
+	height:10px;
+	background:rgba(171,213,221,1.00);
+	color:rgba(204,62,64,1.00);
 }
 
 .contact-form-section .contact-form .form-group input::-webkit-input-placeholder,
