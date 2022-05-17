@@ -1,5 +1,6 @@
 
 
+
 <!doctype html>
 <html><head>
 <meta charset="utf-8">
@@ -7,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ThinkBox Children's Library</title>
-
+<meta name="keywords" content=" kids Library, toys library, childrens library, books, toys, children's activites, quizzes, art workshops, science workshops, maths workshop,best childerens library, banglore childrens library  ">
+<meta name="description" content="Physical library of books and toys for children books & toys with an activity center in Banglore">
 <!-- Stylesheets -->
 <link href="css/bootstrap2.css" rel="stylesheet" >
 <link href="css/style.css" rel="stylesheet">
@@ -47,7 +49,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-envelope"></i>
-                                <a href="mailto:ethinkbox@gmail.com">ethinkbox@gmail.com</a>
+                               <a href="https://mail.google.com/mail/?view=cm&ui=2&tf=0&fs=1&to=ethinkbox@gmail.com">ethinkbox@gmail.com</a>
                             </li>
                             <li>
                                 <i class="fab fa-whatsapp"></i>
@@ -84,7 +86,7 @@
                                         <li><a href="about.html">About Us</a>
                                         
                                         </li> 
-                                        <li ><a href="https://thinkbox.libib.com/">Books</a>
+                                        <li ><a href="https://www.libib.com/u/thinkbox" target="_blank">Books</a>
                                            
                                         </li> 
                                           <li class="dropdown"><a href="#">Toys</a>
@@ -105,10 +107,10 @@
                         </div>
                         <div class="outer-box">
                             <ul class="outer-content">
-                          <li>      <i class="fas fa-user"></i> Login</li>
+                         <li>  <a href="https://www.libib.com/u/thinkbox" target="_blank">    <i class="fas fa-user"></i>  Login </a> </li>
                                 
-                             <li><a href="#register_form">  Register </a>
-                </li>
+                        <!--    <li><a href="#register_form">  Register </a>
+                </li>-->
           
                 </ul>
  
@@ -122,7 +124,7 @@
         <!--Sticky Header-->
         <div class="sticky-header">
             <div class="container clearfix">
-                <figure class="logo-box"><a href="index.html"><img src="images/small-logo.png" alt=""></a></figure>
+                <figure class="logo-box"><a href="index.html"><img src="images/small-logo.svg" alt=""></a></figure>
                 <div class="menu-area">
                     <nav class="main-menu navbar-expand-lg">
                         <div class="navbar-header">
@@ -141,25 +143,28 @@
                                         <li><a href="about.html">About Us</a>
                                         
                                         </li> 
-                                        <li><a href="https://thinkbox.libib.com/">Books</a>
+                                        <li><a href="https://www.libib.com/u/thinkbox" target="_blank">Books</a>
                                         </li> 
-                                       <li class="dropdown"><a href="#">Toys</a>
+                                     
+                                             <li class="dropdown"><a href="#">Toys</a>
                                             <ul>
                                                <li><a href="toys_0.html">0-5 yrs</a></li>
                                                 <li><a href="toys_6.html">6-12 yrs</a></li>
                                                  
                                                
                                             </ul>
-                                            <ul>
-                                        <li ><a href="plans.html">Plans</a>
+                                        </li>
+                                     
+                                   
+                                        <li><a href="plans.html">Plans</a>
                                            
                                         </li>                              
-                                        <li  class="current"><a href="contact.html">Contact Us</a></li>
+                                        <li class="current" ><a href="contact.html">Contact Us</a></li>
+                                        
                                     </ul>
-                                
                             
-                        </li>
-                        </ul>
+                       
+                       
                         </div>
                         </nav>
                         
@@ -254,7 +259,7 @@
                             <div class="icon-box"><i class="flaticon-mail"></i></div>
                             <h3>Email Address</h3>
                             <div class="text">
-                            <a href="mailto:ethinkbox@gmail.com">ethinkbox@gmail.com</a><br/>
+                             <a href="https://mail.google.com/mail/?view=cm&ui=2&tf=0&fs=1&to=ethinkbox@gmail.com">ethinkbox@gmail.com</a><br/>
                               
                                   <br/>  <br/> <br/>
                                 
@@ -277,41 +282,233 @@
     <section class="contact-form-section sec-pad">
         <div class="container">
             <div class="sec-title centred">
-                <h5>Inquiry</h5>
+                <h5>Enquiry</h5>
                 <h1>Drop us a line! We would love to hear you.</h1>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 offset-lg-2" form-column>
                     <div class="contact-form">
-                        <form method="post" id="contact-form"  action="mail_handler.php" class="default-form" > 
+                    <form class="gform pure-form pure-form-stacked" method="POST" data-email="ethinkbox@gmail.com" id="form-2"
+  action="https://script.google.com/macros/s/AKfycbynezNC4pDcmJoAi3fP6kIZJmzh6A_EcY0_zUxv2VfYjKBs-OYNXY2D_OZRSzxSBfFz/exec" >
+                       
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                    <input type="text" name="username"  placeholder="Your Name*" required>
+                                    <input type="text" name="name"  placeholder="Your Name*" required>
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                    <input type="email" name="email" placeholder="Your Email*" >
+                                    <input type="email" id="email" name="email" placeholder="Your Email*" required >
+                                     <div  id="email_error" class="error hiddenmail">Please enter a valid email id</div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 col-sm-12 form-group" >
-                                      <input  type="text" id="phoneno" name="phoneno" maxlength="10" placeholder="Enter 10-digit phone number*" required>                                       
+                                      <input  type="text" id="phone" name="phone" maxlength="10" placeholder="Enter 10-digit phone number*"  required  >                                       
          <div id="phone_error" class="error hidden">Please enter a valid phone number</div>
   
                                 </div>
-                                
-                                
-      
-                    
-                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                       <div class="col-lg-6 col-md-12 col-sm-12 form-group">
                                     <input type="text" name="sub" id="sub" placeholder="Subject">
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea type="text" name="mssg" id="mssg" placeholder="Write here message"></textarea>
+                                    <textarea type="text" name="message" id="message" placeholder="Write here message"></textarea>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
-                                    <button type="submit" class="theme-btn" name="submit" value="submit" >Submit Now</button>
+                                    <button  class="theme-btn" name="submit" value="submit"  onclick="submitForm()">Send</button>
                                 </div>
                           </div> 
+                          
+                          
+                          
+            
+                <div class="thankyou_message">
+      <h1>Thanks for contacting us!</h1>
+      <h5>You will soon hear form us!</h5>
+    </div>           
+                          
+                          
+                               
+                          
                         </form>
                     
+     
+                       
+                        
+                   <script data-cfasync="false" type="text/javascript">
+    
+    
+    
+   (function()
+    {
+  function validEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+ 
+
+ }
+	
+	
+	
+  function validatePhoneNumber(input_str) {
+    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+    return re.test(input_str);
+}
+
+function validateForm(event) {
+    var phone = document.getElementById('phone').value;
+    if (!validatePhoneNumber(phone)) {
+        document.getElementById('phone_error').classList.remove('hidden');
+    } else {
+        document.getElementById('phone_error').classList.add('hidden');
+		
+        }
+	
+   var email = document.getElementById('email').value;
+	 
+	 if (!validEmail(email)) {
+        document.getElementById('email_error').classList.remove('hiddenmail');
+    } else {
+        document.getElementById('email_error').classList.add('hiddenmail');
+	    submit
+      
+    }
+   
+
+    event.preventDefault();
+	
+}
+
+document.getElementById('form-2').addEventListener( 'submit',validateForm);                  
+
+
+  function validateHuman(honeypot) {
+    if (honeypot) {
+      console.log("Robot Detected!");
+      return true;
+    } else {
+      console.log("Welcome Human!");
+    }
+  }
+      
+      
+
+  function getFormData(form) {
+    var elements = form.elements;
+
+    var fields = Object.keys(elements).filter(function(k) {
+          return (elements[k].name !== "honeypot");
+    }).map(function(k) {
+      if(elements[k].name !== undefined) {
+        return elements[k].name;
+      }else if(elements[k].length > 0){
+        return elements[k].item(0).name;
+      }
+    }).filter(function(item, pos, self) {
+      return self.indexOf(item) == pos && item;
+    });
+
+    var formData = {};
+    fields.forEach(function(name){
+      var element = elements[name];
+      formData[name] = element.value;
+      if (element.length) {
+        var data = [];
+        for (var i = 0; i < element.length; i++) {
+          var item = element.item(i);
+          if (item.checked || item.selected) {
+            data.push(item.value);
+          }
+        }
+        formData[name] = data.join(', ');
+      }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "Sheet1"; // default sheet name
+    formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+    console.log(formData);
+    return formData;
+  }
+
+  function handleFormSubmit(event) {  
+    event.preventDefault();           
+    var form = event.target;
+    var data = getFormData(form);         
+    if( data.email && !validEmail(data.email) ) {   
+      var invalidEmail = form.querySelector(".email-invalid");
+      if (invalidEmail) {
+        invalidEmail.style.display= "block";
+		
+        return false;
+      }
+	  
+    } else {
+      disableAllButtons(form);
+      var url = form.action;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          console.log(xhr.status, xhr.statusText);
+          console.log(xhr.responseText);
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "none"; // hide form
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
+          return;
+      };
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    }
+  }
+
+
+
+  function loaded() {
+    console.log("Contact form submission handler loaded successfully.");
+    var forms = document.querySelectorAll("form.gform");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", handleFormSubmit, false);
+    }
+  };
+  document.addEventListener("DOMContentLoaded", loaded, false);
+
+  function disableAllButtons(form) {
+    var buttons = form.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+    }
+	
+	form.reset();  	
+  }
+
+	}
+
+)
+
+ 
+    
+();
+
+
+  </script>
+
+
+ 
+                          
+ <!--                         
+       <script>
+function myFunction() {
+  document.getElementById("form-2").reset();
+}
+</script>    -->              
+               
                 </div>
             </div>
             
@@ -321,26 +518,7 @@
 
  <!-- our-teachers -->
     
-   <script>
-function validatePhoneNumber(input_str) {
-    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-
-    return re.test(input_str);
-}
-
-function validateForm(event) {
-    var phone = document.getElementById('phoneno').value;
-    if (!validatePhoneNumber(phone)) {
-        document.getElementById('phone_error').classList.remove('hidden');
-    } else {
-        document.getElementById('phone_error').classList.add('hidden');
-        submit
-    }
-    event.preventDefault();
-}
-
-document.getElementById('contact-form').addEventListener('submit', validateForm);
-</script>
+  
   
     
 
@@ -409,7 +587,7 @@ document.getElementById('contact-form').addEventListener('submit', validateForm)
                                     <ul class="info-list">
                                        
                                         <li><i class="fas fa-phone"></i><a href=" ">+ 91-9742849955 </a></li>
-                                        <li><i class="fas fa-envelope"></i><a href="mailto:ethinkbox@gmail.com">ethinkbox@gmail.com</a></li>
+                                        <li><i class="fas fa-envelope"></i><a href="https://mail.google.com/mail/?view=cm&ui=2&tf=0&fs=1&to=ethinkbox@gmail.com">ethinkbox@gmail.com</a></li>
                                         <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/918197213944"> 8197213944 </a></li>
                                     </ul>
                                 </div>
