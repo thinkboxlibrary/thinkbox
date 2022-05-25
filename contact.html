@@ -346,10 +346,10 @@
 	
 	
 	
-  function validatePhoneNumber(input_str) {
+  function validatePhoneNumber(phone) {
     var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
-    return re.test(input_str);
+    return re.test(phone);
 }
 
 function validateForm(event) {
@@ -434,13 +434,22 @@ document.getElementById('form-2').addEventListener( 'submit',validateForm);
     event.preventDefault();           
     var form = event.target;
     var data = getFormData(form);         
-    if( data.email && !validEmail(data.email) ) {   
+   if( data.phone && !validatePhoneNumber(data.phone)  ) {   
+      var invalidphone = form.querySelector(".phone-invalid");
+	  
+      if (invalidphone) {
+        invalidphone.style.display = "block";
+        return false;
+	  }
+	}
+
+	 else if( data.email && !validEmail(data.email) ) {   
       var invalidEmail = form.querySelector(".email-invalid");
       if (invalidEmail) {
-        invalidEmail.style.display= "block";
-		
+        invalidEmail.style.display = "block";
         return false;
       }
+	 }
 	  
     } else {
       disableAllButtons(form);
@@ -632,7 +641,7 @@ function myFunction() {
                     <div class="right-content pull-right">
                         <figure class="footer-logo"><a href="index.html"><img src="images/logo.svg" alt=""></a></figure>
                    <ul class="social-style-one footer-social clearfix">
-                             <div class="copyright"> Designed and Developed by VRwebs</div>
+                             <div class="copyright"><a href="https://mail.google.com/mail/?view=cm&ui=2&tf=0&fs=1&to=vrwebs@gmail.com"> Designed and Developed by VRwebs </a></div>
                         </ul>
                     </div>
                 </div>

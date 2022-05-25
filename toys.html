@@ -1,0 +1,1803 @@
+
+
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ThinkBox Children's Library</title>
+
+<!-- Stylesheets -->
+<link href="css/bootstrap2.css" rel="stylesheet" >
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+
+  <style>
+       .modal-box{ font-family: 'Roboto Regular','Open Sans', sans-serif; }
+.show-modal{
+    color: #fff;
+ /*   background: linear-gradient(to right, ##2e7ec2, #0675cf, #49a6fd);*/
+ background:#2e7ec2;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display:inline-block;
+    transition: all 0.3s ease 0s;
+}
+.show-modal:hover,
+.show-modal:focus{
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    outline: none;
+}
+.btn-primary:hover {
+	
+	background-color: #2e7ec2 !important;
+	border-color:#2e7ec2 !important;
+}
+.modal-dialog{
+    width: 400px;
+    margin: 70px auto 0;
+}
+.modal-dialog{ transform: scale(0.5); }
+.modal-dialog{ transform: scale(1); }
+.modal-dialog .modal-content{
+    text-align: center;
+    border: none;
+}
+.modal-content .close{
+    color: #fff;
+    background: #2e7ec2;
+    font-size: 25px;
+    font-weight: 400;
+    text-shadow: none;
+    line-height: 27px;
+   
+    width: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+    left: auto;
+    right: 8px;
+    top: 8px;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.modal-content .close:hover{
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.close:focus{ outline: none; }
+.modal-body{ padding: 60px 40px 40px !important; }
+.modal-body .title{
+    color: #026fd4;
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 10px;
+}
+.modal-body .description{
+    color: #9A9EA9;
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+.modal-body .form-group{
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+.modal-body .input-icon{
+    color: #777;
+    font-size: 18px;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+.modal-body .form-control{
+    font-size: 17px;
+    height: 45px;
+    width: 100%;
+    padding: 6px 0 6px 50px;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+}
+.form-control::placeholder{
+    color: #AEAFB1;
+}
+.form-group.checkbox{
+    width: 130px;
+    margin-top: 0;
+    display: inline-block;
+}
+.form-group.checkbox label{
+    color: #9A9EA9;
+    font-weight: normal;
+}
+.form-group.checkbox input[type=checkbox]{
+    margin-left: 0;
+}
+.modal-body .forgot-pass{
+    color: #2e7ec2;
+    font-size: 13px;
+    text-align: right;
+    width: calc(100% - 135px);
+    margin: 2px 0;
+    display: inline-block;
+    vertical-align: top;
+    transition: all 0.3s ease 0s;
+}
+.forgot-pass:hover{
+    color: #9A9EA9;
+    text-decoration: underline;
+}
+.modal-content .modal-body .btn{
+    color: #fff;
+    /*background: linear-gradient(to right, #a4def4, #2e7ec2, #a4def4)*/
+	background:#a6c339;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 38px;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    transition: all 0.6s ease 0s;
+}
+.modal-content .modal-body .btn:hover{
+    color: #fff;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.modal-content .modal-body .btn:focus{ outline: none; }
+@media only screen and (max-width: 480px){
+    .modal-dialog{ width: 95% !important; }
+    .modal-content .modal-body{
+        padding: 60px 20px 40px !important;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+
+
+<header class="main-header">
+<div class="header-top">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <div class="social-links pull-left">
+                    48, 7th Main, 1st Floor, Near Indian Overseas Bank, Bengaluru 560075
+                       <!-- <ul class="social-list">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                        </ul>-->
+                    </div>
+                    <div class="header-info pull-right">
+                        <ul class="info-list">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+ 91-9742849955 ">+ 91-9742849955   </a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:ethinkbox@gmail.com">ethinkbox@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <a href="#"> 8197213944</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></figure>
+                    </div>
+                      <div class="nav-outer pull-right clearfix">
+                        <div class="menu-area">
+                            <nav class="main-menu navbar-expand-lg">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->      
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                         <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                        <li class="current dropdown"><a href="index.html">Home</a>
+                                           <!-- <ul>
+                                                <li><a href="index.html">Home Page 01</a></li>
+                                                <li><a href="index-2.html">Home Page 02</a></li>
+                                                <li><a href="index-3.html">Home Page 03</a></li>
+                                                <li class="dropdown"><a href="#">Header Styles</a>
+                                                <ul>
+                                                    <li><a href="index.html">Header Style 01</a></li>
+                                                    <li><a href="index-2.html">Header Style 02</a></li>
+                                                    <li><a href="index-3.html">Header Style 03</a></li>
+                                                </ul>
+                                            </li>
+                                            </ul>-->
+                                        </li>
+                                        <li class="dropdown"><a href="about.html">About Us</a>
+                                         <!--   <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="faq.html">Faq Page</a></li>
+                                                <li><a href="testimonial.html">Testimonials</a></li>
+                                                <li><a href="error.html">Error Page</a></li>
+                                            </ul>-->
+                                        </li> 
+                                        <li class="dropdown"><a href="#">Books</a>
+                                            <!--<ul>
+                                                <li><a href="class.html">3-5 yrs</a></li>
+                                                <li><a href="class-details.html">5-8 yrs</a></li>
+                                                 <li><a href="class-details.html">8-15 yrs</a></li>
+                                                   <li><a href="class-details.html">Adult</a></li>
+                                            </ul>-->
+                                        </li> 
+                                        <li class="dropdown"><a href="toys.html">Toys</a>
+                                          <!--  <ul>
+                                               <li><a href="class.html">3-5 yrs</a></li>
+                                                <li><a href="class-details.html">5-8 yrs</a></li>
+                                                 <li><a href="class-details.html">8-15 yrs</a></li>
+                                               
+                                            </ul>-->
+                                        </li>
+                                        <li class="dropdown"><a href="plans.html">Plans</a>
+                                           <!-- <ul>
+                                                <li><a href="blog.html">Blog Page</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>-->
+                                        </li>                              
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="outer-box">
+                            <ul class="outer-content">
+                          <li>  <a href="#register">    <i class="fas fa-user"></i> </a></li>
+                                
+                             <li>   <button type="button" class="btn btn-primary btn-lg show-modal" data-toggle="modal" data-target="#myModal">
+                  Login 
+                </button> </li>
+          
+                </ul>
+ 
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="images/small-logo.png" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                         <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li><a href="index.html">Home</a>
+                                        <!--    <ul>
+                                                <li><a href="index.html">Home Page 01</a></li>
+                                                <li><a href="index-2.html">Home Page 02</a></li>
+                                                <li><a href="index-3.html">Home Page 03</a></li>
+                                                <li class="dropdown"><a href="#">Header Styles</a>
+                                                <ul>
+                                                    <li><a href="index.html">Header Style 01</a></li>
+                                                    <li><a href="index-2.html">Header Style 02</a></li>
+                                                    <li><a href="index-3.html">Header Style 03</a></li>
+                                                </ul>
+                                            </li>
+                                            </ul>-->
+                                        </li>
+                                        <li><a href="about.html">About Us</a>
+                                          <!--  <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="faq.html">Faq Page</a></li>
+                                                <li><a href="testimonial.html">Testimonials</a></li>
+                                                <li><a href="error.html">Error Page</a></li>
+                                            </ul>-->
+                                        </li> 
+                                        <li class="dropdown"><a href="#">Books</a>
+                                            <!--<ul>
+                                                <li><a href="class.html">3-5yrs</a></li>
+                                                <li><a href="class-details.html">5-8yrs</a></li>
+                                                <li><a href="class-details.html">8-12yrs</a></li>
+                                                <li><a href="class-details.html">Adult</a></li>
+                                            </ul>-->
+                                        </li> 
+                                        <li><a href="toys.html">Toys</a>
+                                             <!-- <ul>
+                                                <li><a href="class.html">3-5yrs</a></li>
+                                                <li><a href="class-details.html">5-8yrs</a></li>
+                                                <li><a href="class-details.html">8-12yrs</a></li>
+                                               
+                                            </ul>-->
+                                        </li>
+                                        <li><a href="plans.html">Plans</a>
+                                           <!-- <ul>
+                                                <li><a href="blog.html">Blog Page</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>-->
+                                        </li>                              
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                       
+                    </div>
+                </div>
+       
+       <!-- sticky-header end -->
+ 
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal-box">
+                <!-- Button trigger modal -->
+                
+                <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content clearfix">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <div class="modal-body">
+                                <h3 class="title">Login </h3>
+                                <p class="description">Login here Using Email & Password</p>
+                                <div class="form-group">
+                                    <span class="input-icon"><i class="fa fa-user"></i></span>
+                                    <input type="email" class="form-control" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <span class="input-icon"><i class="fas fa-key"></i></span>
+                                    <input type="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox">
+                                    <label>Remember me</label>
+                                </div>
+                                <a href="" class="forgot-pass">Forgot Password?</a>
+                                <button class="btn">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                
+            
+            
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+ <section class="page-title centred" style="background-image: url(images/background/toys-banner.jpg);">
+        <div class="container">
+            <div class="content-box">
+                <h1>TOYS</h1>
+                
+            </div>
+        </div>
+    </section>
+    <!-- main-slider end -->
+    <!--browse section-->
+    
+  <section class="cart-section cart-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 table-column">
+                    <div class="table-outer">
+                        <table class="cart-table">
+                            <thead class="cart-header">
+                                <tr>
+                                    <th  colspan="3" class="prod-column">Toys</th>
+                                 
+                                    <th class="price">Category</th>
+                                    <th class="quantity">Age group</th>
+                                    <th>Barcode</th>
+                                   
+                                </tr>    
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1000.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                             Play and Learn-Dinosaurs
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price"><span class="align-baseline">TY1000</span></td>
+                                            
+                           </td> 
+                           </tr>      
+                                
+                                
+                   <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1001.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                            Early Learner-Month Of the Year
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1001</td>
+                                            
+                           </td> 
+                           </tr>      
+                           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1002.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                            Early Learner-What People do
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1002</td>
+                                            
+                           </td> 
+                           </tr>      
+                           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1003.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                             Early Learner-What things are made of
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1003</td>
+                                            
+                           </td> 
+                           </tr>      
+                           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1004.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                            Early Learner-My 10 Rules
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1004</td>
+                                            
+                           </td> 
+                           </tr>      
+                           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1005.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                             Step By Step Phonics-More Compound Words
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1005</td>
+                                            
+                           </td> 
+                           </tr>      
+                           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1008.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                             Antonyms Word Opposites
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1008</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1009.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                           Homophones
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1009</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1011.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                             Synonyms
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1011</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1012.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                            Fun with Living and Non-Living
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1012</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1014.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                             Tray Puzzle-My first clock
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1014</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1015.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                            Tray Puzzle-Wild Animals
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1015</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1016.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                            Tray Puzzle-Clock Joker
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1016</td>
+                                            
+                           </td> 
+                           </tr>                
+                             
+                             <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1017.jpg">
+                                           </div>
+                                            <div class="prod-title">
+                                          Cobblers Bench
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1017</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1018.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                            Theme Puzzle-Snail
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1018</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1020.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                           Baby Puzzle-Flowers
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1020</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1021.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                           Mini Puzzle-Ben Ten
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1021</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1022.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                           Tray Puzzle-Fractions different shapes
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1022</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1023.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                          Baby Puzzle-Transport
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1023</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1024.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                          Tray puzzle-Seal
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1024</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1025.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                           Take apart-Hen
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1025</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1028.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                           Sewing Toy-Rhino
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1028</td>
+                                            
+                           </td> 
+                           </tr>           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1029.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                           Mini Puzzle-Bob the Builder
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1029</td>
+                                            
+                           </td> 
+                           </tr>          
+                                    
+                                               
+                 <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1030.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                         Shape Sorter Engine
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1030</td>
+                                            
+                           </td> 
+                           </tr>   
+                              <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1031.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                          Number and Bead set
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1031</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1031.jpg"
+                                               >
+                                           </div>
+                                            <div class="prod-title">
+                                          Take apart puzzle - Puppy
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1031</td>
+                                            
+                           </td> 
+                           </tr>      <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1033.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                           Theme Puzzle-Duck
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1033</td>
+                                            
+                           </td> 
+                           </tr>                    
+                             
+           <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1035.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Tray puzzle-Alphabet jigsaw snake puzzle
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1035</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1036.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                           Tray puzzle-Fractions-Triangle
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1036</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1037.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                           Tray Puzzle-Addition board
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1037</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1038.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                           Tray Puzzle-Farm Animals
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1038</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1039.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                             Tray Puzzle-Fruits
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1039</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1040.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Tray Puzzle-Shoe lacing
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1040</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1041.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Tray Puzzle-Vehicles
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1041</td>
+          
+          
+          
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1043.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                           Tray Puzzle-My numbers Duck
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1043</td>
+                                            
+                           </td> 
+                           </tr>                  <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1044.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Beadler
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1044</td>
+                                            
+                           </td> 
+                           </tr>                                    
+                             
+                             
+             <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1045.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Post-It House
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1045</td>
+                                            
+                           </td> 
+                           </tr>                       
+                            <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1046.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Vegi-products Match up Puzzles
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1046</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1047.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Tray Puzzle-Fraction Board
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1047</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1048.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Abacus
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1048</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1050.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                        Make and Break Car
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1050</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1051.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Maze Chase-Animals and their products
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1051</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1053.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Tray Puzzle-Logic Block set
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1053</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1054.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Shapes around us
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1054</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1055.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Word Builder
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age  6 - 12</td>
+          <td class="price">TY1055</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1056.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Disney Pixar-Finding Nemo 2
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1056</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1057.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Walt Disney's 101 Dalmatians
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1057</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1058.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Mindspace
+                                            </div>
+          <td class="price">Board Game</td>
+          <td class="sub-total" >Age6 - 12</td>
+          <td class="price">TY1044</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1065.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Hammer the Ball
+                                             </div>
+                                            </div>
+          <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1044</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1066.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Spider-Man
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1066</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1068.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                        Tray Puzzle-Map of World
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1068</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1069.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Tray puzzle-Shape Magic
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1069</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1071.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Early Learner-Let's Shop
+                                             </div>
+                                            </div>
+          <td class="price">Board Game</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1071</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1072.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Pooh Puzzle
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1072</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1073.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                        Geoboard
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1073</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1074.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Quiz Time
+                                             </div>
+                                            </div>
+          <td class="price">Board Game</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1074</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1075.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Puzzle world-Build The Seven
+                                             </div>
+                                            </div>
+          <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1075</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1076.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Stacrobats
+                                             </div>
+                                            </div>
+          <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1076</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1077.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Tray Puzzle-Mode of Transport
+                                             </div>
+                                            </div>
+          <td class="price">Wooden Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1077</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1081.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Lexicon
+                                             </div>
+                                            </div>
+          <td class="price">Card Game</td>
+         <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1081</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1083.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Brain Power Su-doku
+                                             </div>
+                                            </div>
+            <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1083</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1085.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Memory Game 1
+                                             </div>
+                                            </div>
+         <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1085</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1086.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Snail-Shape sorter
+                                             </div>
+                                            </div>
+         <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1086</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1087.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Grand Prix
+                                             </div>
+                                            </div>
+          <td class="price">Card Game</td>
+         <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1087</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1088.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Big lego Blocks
+                                             </div>
+                                            </div>
+            <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1088</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1089.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Lego Blocks
+                                             </div>
+                                            </div>
+          <td class="price">Plastic Toy</td>
+             <td class="sub-total" >Age 0 - 5</td>
+          
+          <td class="price">TY1089</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1090.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                        Brick to Brick
+                                             </div>
+                                            </div>
+          <td class="price">Card Game</td>
+       <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1090</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1092.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         Toss_a_ring
+                                             </div>
+                                            </div>
+          <td class="price">Plastic Toy</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1092</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1093.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Mamory Game-Match 'n' Learn
+                                             </div>
+                                            </div>
+          <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1093</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1094.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                          Bowling
+                                             </div>
+                                            </div>
+        <td class="price">Plastic Toy</td>
+       
+          <td class="sub-total" >Age 0 - 5</td>
+          <td class="price">TY1094</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1099.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                        Early Learner-Play'n'spell
+                                             </div>
+                                            </div>
+         <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1099</td>
+                                            
+                           </td> 
+                           </tr>                        <tr>
+                                    <td colspan="3" class="prod-column">
+                                        <div class="column-box">
+                                            <div class="prod-thumb">
+                                               <img src="images/Toysimages/ty1100.jpg"
+                                              >
+                                           </div>
+                                            <div class="prod-title">
+                                         The Little Mermaid Puzzle 1
+                                             </div>
+                                            </div>
+            <td class="price">Puzzle</td>
+          <td class="sub-total" >Age 6 - 12</td>
+          <td class="price">TY1100</td>
+                                            
+                           </td> 
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                             
+                            </tbody>    
+                        </table>
+                        </div>
+                        </div>
+                        </div>
+                        
+                       <div class="pagination-wrapper centred">
+                <ul class="pagination">
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="fas fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+     
+             </div>
+                                   
+                        
+                        </section>
+                        
+                        
+                        
+        
+      
+    <!-- about-section end --> 
+   
+   
+    
+    
+    
+    
+ <!-- our-teachers -->
+    
+    
+        
+
+    
+   
+
+
+    <!-- main-footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="parallax-scene parallax-scene-4 parallax-icon">
+                <span data-depth="0.40" class="parallax-layer icon icon-1"></span>
+                <span data-depth="0.50" class="parallax-layer icon icon-2"></span>
+                <span data-depth="0.30" class="parallax-layer icon icon-3"></span>
+                <span data-depth="0.40" class="parallax-layer icon icon-4"></span>
+                <span data-depth="0.50" class="parallax-layer icon icon-5"></span>
+                <span data-depth="0.30" class="parallax-layer icon icon-6"></span>
+                <span data-depth="0.40" class="parallax-layer icon icon-7"></span>
+                <span data-depth="0.40" class="parallax-layer icon icon-8"></span>
+                 
+            </div>
+            <div class="container">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="link-widget footer-widget">
+                            <ul class="info-list">
+                            
+                               
+                             <li>   <h3 class="widget-title">Location</h3></li>
+                             </ul>
+                                <div class="widget-content">
+                                      <li>#48, 7th Main, 1st Floor, </li>
+                                    <li>  Near Indian Overseas Bank,</li> <li>Bengaluru 560075</li>
+                                    
+                                        
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="link-widget footer-widget">
+                                <h3 class="widget-title">Opening Hours</h3>
+                                <div class="widget-content">
+                                  <li>
+                                        Monday - Saturday: 
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                    11:00 am to 1:30 pm</li>
+                                     <li>
+                                    4:30 pm to 8:00 pm</li>
+                                    <li> Sunday: </li>
+                                    <li> 11:00 am to 1:30 pm</li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="contact-widget footer-widget">
+                                <h3 class="widget-title">ContactUs</h3>
+                                <div class="widget-content">
+                                    <div class="text"></div>
+                                    <ul class="info-list">
+                                       
+                                        <li><i class="fas fa-phone"></i><a href="tel:+91-9742849955 ">+ 91-9742849955 </a></li>
+                                        <li><i class="fas fa-envelope"></i><a href="mailto:ethinkbox@gmail.com">ethinkbox@gmail.com</a></li>
+                                        <li><i class="fab fa-whatsapp"></i> 8197213944</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="subscribe-widget footer-widget">
+                                <h3 class="widget-title">Stay Connected</h3>
+                                <div class="widget-content">
+                                    <div class="text"></div>
+                                    <div class="subscribe-inner">
+                                    
+                                    <ul class="social-style-one footer-social clearfix">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                           <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>-->
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                                    
+                                        <!--<form action="#" method="post" class="subscribe-form">
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="Enter Your Email" required="">
+                                                <button type="submit" class="theme-btn">Subscribe</button>
+                                            </div>
+                                        </form>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <div class="left-content pull-left">
+                        <div class="copyright">Copyright &copy; <a href="#">ThinkBox Library</a> 2022.
+                       All Rights Reserved</div>
+                    </div>
+                    <div class="right-content pull-right">
+                        <figure class="footer-logo"><a href="index.html"><img src="images/footer-logo.png" alt=""></a></figure>
+                   <ul class="social-style-one footer-social clearfix">
+                             <div class="copyright"> Designed and Developed by VRwebs</div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <i class="fa fa-arrow-up"></i>
+</button>
+
+
+
+<!-- jequery plugins -->
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/parallax.min.js"></script>
+
+<!-- main-js -->
+<script src="js/script.js"></script>
+
+</body><!-- End of .page_wrapper -->
+</html>
+
+
+

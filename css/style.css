@@ -3391,7 +3391,15 @@ line-height:18px !important;
   font-size:14px;
   
 }
+.copyright a{
+	color:#2b3c6b;
+	
+}
 
+.copyright a:hover{
+	color: #ff7162;
+	
+}
 .main-footer .footer-bottom .left-content .copyright a{
   color: #2b3c6b;
 }
@@ -4654,7 +4662,7 @@ font-weight:500;
 margin-bottom:10px;
 line-height:26px;
 color:#2e7ec2;
-padding:10px;
+padding:10px 30px;
 
 }
 
@@ -5427,7 +5435,7 @@ opacity:1;
 	color:#ffffff;
 	width:100%;
 	height:auto;
-	margin:5px auto;
+	/*margin:5px auto;*/
 	text-align:center;
 	border-radius:10px;
 	background:#fbb419;

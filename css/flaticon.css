@@ -20,10 +20,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('font-awesome/fontawesome-webfont.ttf') format('truetype');
-}
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Flaticon";
@@ -81,4 +77,3 @@
 .flaticon-clear-button:before { content: "\f122"; }
 .flaticon-cancel:before { content: "\f123"; }
 .licon-clock3:before { content: "\e8e8"; }
-.far fa-clock:before{ content:"\f017";}

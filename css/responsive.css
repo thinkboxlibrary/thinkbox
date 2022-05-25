@@ -621,10 +621,20 @@ font-size:30px;
 	
 	font-size:25px;	
 }
+
+.go a{
+	width: 60px;
+    height: 60px;
+    font-size: 3rem;
 	
-	.column3{
-font-size:22px;	
+	
 }
+
+
+	
+	/*.column3{
+font-size:22px;	
+}*/
 .text{
 font-size:12px !important;
 line-height:18px !important;	
@@ -886,6 +896,15 @@ height:50px;
 font-size:2.5rem;	
 	
 }
+.go a{
+	width: 50px;
+    height: 50px;
+    font-size: 3rem;
+	
+	
+}
+
+
 .logo-box img{
 	
 max-width:70%
@@ -1204,6 +1223,8 @@ font-size:20px;
 font-size:22px;
 line-height:30px;	
 }
+
+
 
 .main-slider .content-box{
 margin-left:5px;	
