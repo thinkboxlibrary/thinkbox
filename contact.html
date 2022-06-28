@@ -301,9 +301,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 offset-lg-2" form-column>
                     <div class="contact-form">
-                        <form class="gform pure-form pure-form-stacked" method="POST" data-email="ethinkbox@gmail.com"
-                            id="form-2"
-                            action="https://script.google.com/macros/s/AKfycbynezNC4pDcmJoAi3fP6kIZJmzh6A_EcY0_zUxv2VfYjKBs-OYNXY2D_OZRSzxSBfFz/exec">
+                        <form class="gform pure-form pure-form-stacked" id="form-2">
 
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 col-sm-12 form-group">
@@ -319,25 +317,24 @@
                                     <div id="phone_error" class="error hidden">Please enter a valid phone number</div>
 
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                <!-- <div class="col-lg-6 col-md-12 col-sm-12 form-group">
                                     <input type="text" name="sub" id="sub" placeholder="Subject">
-                                </div>
+                                </div> -->
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                     <textarea type="text" name="message" id="message"
                                         placeholder="Write here message"></textarea>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn centred">
-                                    <button class="theme-btn" name="submit" value="submit"
-                                        onclick="submitForm()">Send</button>
+                                    <button class="theme-btn" type="submit" id="js-submit" name="submit" value="submit">Send</button>
                                 </div>
                             </div>
 
 
 
 
-                            <div class="thankyou_message">
-                                <h1>Thanks for contacting us!</h1>
-                                <h5>You will soon hear form us!</h5>
+                            <div class="register_message">
+                                <h1>Thank you for contacting us!</h1>
+                                <h5>You will hear from us soon!</h5>
                             </div>
 
 
@@ -383,8 +380,6 @@
                                         document.getElementById('email_error').classList.remove('hiddenmail');
                                     } else {
                                         document.getElementById('email_error').classList.add('hiddenmail');
-                                        submit
-
                                     }
 
 
@@ -465,61 +460,59 @@
                                             invalidEmail.style.display = "block";
                                             return false;
                                         }
+                                    } else {
+                                        disableAllButtons(form);
+                                        var url = form.action;
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open('POST', url);
+                                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                        xhr.onreadystatechange = function () {
+                                            console.log(xhr.status, xhr.statusText);
+                                            console.log(xhr.responseText);
+                                            var formElements = form.querySelector(".form-elements")
+                                            if (formElements) {
+                                                formElements.style.display = "none"; // hide form
+                                            }
+                                            var thankYouMessage = form.querySelector(".thankyou_message");
+                                            if (thankYouMessage) {
+                                                thankYouMessage.style.display = "block";
+                                            }
+                                            return;
+                                        };
+                                        var encoded = Object.keys(data).map(function (k) {
+                                            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                                        }).join('&');
+                                        xhr.send(encoded);
+                                    }
+                                }
+
+
+
+                                function loaded() {
+                                    console.log("Contact form submission handler loaded successfully.");
+                                    var forms = document.querySelectorAll("form.gform");
+                                    for (var i = 0; i < forms.length; i++) {
+                                        forms[i].addEventListener("submit", handleFormSubmit, false);
+                                    }
+                                };
+                                document.addEventListener("DOMContentLoaded", loaded, false);
+
+                                function disableAllButtons(form) {
+                                    var buttons = form.querySelectorAll("button");
+                                    for (var i = 0; i < buttons.length; i++) {
+                                        buttons[i].disabled = true;
                                     }
 
-                                } else {
-                                    disableAllButtons(form);
-                                    var url = form.action;
-                                    var xhr = new XMLHttpRequest();
-                                    xhr.open('POST', url);
-                                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                                    xhr.onreadystatechange = function () {
-                                        console.log(xhr.status, xhr.statusText);
-                                        console.log(xhr.responseText);
-                                        var formElements = form.querySelector(".form-elements")
-                                        if (formElements) {
-                                            formElements.style.display = "none"; // hide form
-                                        }
-                                        var thankYouMessage = form.querySelector(".thankyou_message");
-                                        if (thankYouMessage) {
-                                            thankYouMessage.style.display = "block";
-                                        }
-                                        return;
-                                    };
-                                    var encoded = Object.keys(data).map(function (k) {
-                                        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-                                    }).join('&');
-                                    xhr.send(encoded);
+                                    form.reset();
                                 }
+
                             }
 
-
-
-  function loaded() {
-                                console.log("Contact form submission handler loaded successfully.");
-                                var forms = document.querySelectorAll("form.gform");
-                                for (var i = 0; i < forms.length; i++) {
-                                    forms[i].addEventListener("submit", handleFormSubmit, false);
-                                }
-                            };
-                            document.addEventListener("DOMContentLoaded", loaded, false);
-
-                            function disableAllButtons(form) {
-                                var buttons = form.querySelectorAll("button");
-                                for (var i = 0; i < buttons.length; i++) {
-                                    buttons[i].disabled = true;
-                                }
-
-                                form.reset();
-                            }
-
-	}
-
-)
+                            )
 
 
 
-                            ();
+                                ();
 
 
                         </script>
@@ -699,6 +692,7 @@ function myFunction() {
 
     <!-- main-js -->
     <script src="js/script.js"></script>
+    <script src="js/emailer.js"></script>
 
 </body><!-- End of .page_wrapper -->
 
